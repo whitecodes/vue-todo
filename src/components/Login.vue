@@ -33,6 +33,7 @@
 
 <script>
 import axio from '../service/axio'
+import router from '../router/index'
 export default {
   name: 'login',
   data () {
@@ -53,6 +54,7 @@ export default {
       axio.login(this.user).then((res) => {
         this.time = res.data
         this.snackbar = true
+        router.push('/hello')
       }, (res) => {
         // debugger
         console.log(res)
